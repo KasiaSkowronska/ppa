@@ -9,13 +9,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ilintar.study.question.Question;
+import org.ilintar.study.question.Answer;
+import org.ilintar.study.question.IQuestion;
 import org.ilintar.study.question.QuestionFactory;
 import org.ilintar.study.question.RadioQuestionFactory;
+import org.ilintar.study.question.event.QuestionAnsweredEvent;
+import org.ilintar.study.question.event.QuestionAnsweredEventListener;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import org.ilintar.study.question.event.QuestionAnsweredEvent;
+import org.ilintar.study.question.event.QuestionAnsweredEventListener;
 import org.ilintar.study.question.event.QuestionAnsweredEvent;
 import org.ilintar.study.question.event.QuestionAnsweredEventListener;
 
@@ -26,6 +31,7 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 	public MainScreenController(){
 		this.whichQuestion = 0;
 	}
+
 	protected static Map<String, QuestionFactory> factoryMap;
 
 	static {
@@ -35,9 +41,9 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 
 	@FXML AnchorPane mainStudy;
 
-	protected Question currentQuestion;
+    protected IQuestion currentQuestion;
 
-	@FXML public void changeQuestion() {
+	@FXML public void startStudy() {
 		mainStudy.getChildren().clear();
 		Node questionComponent = readQuestionFromFile(whichQuestion, getClass().getResourceAsStream("StudyDetails.sqf"));
 		mainStudy.getChildren().add(questionComponent);
@@ -50,7 +56,7 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 		List<String> questionLines = new ArrayList<>();
 		boolean readingQuestions = false;
 		String questionType = null;
-		String questionID = null;
+		String questionId = null;
 		try {
 			while ((currentLine = br.readLine()) != null) {
 				if (currentLine.startsWith("StartQuestion")) { // begin reading questions
@@ -67,13 +73,13 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 							}
 							if (elements.length > 2){
 								String[] givenID = elements[2].split("=");
-								questionID = givenID[1];
+								questionId = givenID[1];
 							}
 						}
 						if (questionType == null) {
 							throw new IllegalArgumentException("Invalid file format: StartQuestion type=<type>");
 						}
-						if (questionID == null) {
+						if (questionId == null) {
 							throw new IllegalArgumentException("Invalid file format: StartQuestion ID=<ID>");
 						}
 					} else {
@@ -90,7 +96,7 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 							} else {
 								throw new IllegalArgumentException("Do not have a factory for question type: " + questionType);
 							}
-						} else {
+						} else {						
 							questionLines.add(currentLine.trim());
 						}
 					}
@@ -102,12 +108,13 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 		return null;
 	}
 
-
 	@Override
 	public void handleEvent(QuestionAnsweredEvent event) {
-//		event.saveToFile(); // doesn't work yet.
-		System.out.println(event.getQuestion().getId());
-		System.out.println(event.getAnswer().getAnswerCode());
-		changeQuestion();
+		IQuestion question = event.getQuestion();
+		Answer answer = event.getAnswer();
+		System.out.println(question.getId());
+		System.out.println(answer.getAnswer());
+
 	}
+
 }
