@@ -44,7 +44,7 @@
                             <jar>target/study-0.1-SNAPSHOT.jar</jar>
                             <errTitle>study</errTitle>
                             <classPath>
-                                <mainClass>org.ilintar.study.Main</mainClass>
+                                <mainClass>kek.study.Main</mainClass>
                                 <addDependencies>true</addDependencies>
                                 <preCp>anything</preCp>
                             </classPath>
