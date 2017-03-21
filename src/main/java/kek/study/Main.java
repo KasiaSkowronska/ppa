@@ -13,11 +13,10 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			URL res = getClass().getResource("/kek/study/StudyMainScreen.fxml");
-			System.out.println(res);
+			URL res = getClass().getResource("/StudyMainScreen.fxml");
 			BorderPane root = (BorderPane)FXMLLoader.load(res);
 			Scene scene = new Scene(root,600,300);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

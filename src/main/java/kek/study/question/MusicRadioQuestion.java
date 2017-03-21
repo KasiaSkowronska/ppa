@@ -5,6 +5,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.stage.FileChooser;
 
 import java.io.File;
 
@@ -13,26 +14,24 @@ import java.io.File;
  */
 public class MusicRadioQuestion extends RadioQuestion {
 
-    // Do not use those questions. Does not work yet!
+    // doesn't work. Need to be rethinked.
 
-    public MusicRadioQuestion(Node renderedQuestion, String id, ToggleGroup group) {
+    public MediaPlayer mediaPlayer;
+
+    public MusicRadioQuestion(Node renderedQuestion, String id, ToggleGroup group, MediaPlayer mediaPlayer) {
         super(renderedQuestion, id, group);
+        this.mediaPlayer = mediaPlayer;
+
     }
-    String currentDir = System.getProperty("user.dir");
-    String folderPath = currentDir + File.separator + "target" + File.separator + "classes" + File.separator+ "music" + File.separator ;
-    // Music files should be in mp3 format and songs should be named the same as corresponding question id (eg. '1.mp3')
 
     public MediaPlayer getMediaPlayer() {
         return mediaPlayer;
     }
 
-    public MediaPlayer mediaPlayer;
+
 
     public void runTrack(int i){
-        String path =  folderPath + Integer.toString(i) + ".mp3";
-        System.out.println(path);
-        Media media = new Media(new File(path).toURI().toString());
-        mediaPlayer = new MediaPlayer(media);
+//        String path =  folderPath + Integer.toString(i) + ".mp3";
         mediaPlayer.setMute(false);
         mediaPlayer.setAutoPlay(true);
         MediaView mediaView = new MediaView(mediaPlayer);
@@ -42,5 +41,9 @@ public class MusicRadioQuestion extends RadioQuestion {
         mediaPlayer.setMute(true);
     }
 
+    @Override
+    public void terminate(){
+        terminateTrack();
+    }
 
 }

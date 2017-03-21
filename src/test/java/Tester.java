@@ -44,7 +44,8 @@ public class Tester {
         lines.add("FA");
         lines.add("Second answer");
         lines.add("SA");
-        return rqf.createQuestion(lines, "LINES");
+//        return rqf.createQuestion(lines, "LINES");
+        return (RadioQuestion) rqf.createQuestion(lines, questionId, questionType, questionExtrasType, "LINES");
     }
 
     @Test
@@ -70,6 +71,11 @@ public class Tester {
         firstButton.setSelected(true);
         Answer a = q.getAnswer();
         Assert.assertEquals("FA", a.getAnswer());
+    }
+
+    @Test
+    public void testDatabase(){
+
     }
 
 }

@@ -26,19 +26,20 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 
     protected PrintWriter out;
 	private int whichQuestion;
-	private String fileName;
+	private String fileName; // file that contains study details
 
 	public MainScreenController() throws FileNotFoundException {
         out = new PrintWriter("answers.answ");
-		this.whichQuestion = -1;
+		this.whichQuestion = -1; // we count from 0.
 	}
 
-	private static Map<String, QuestionFactory> factoryMap;
+	private static Map<String, IQuestionFactory> factoryMap;
 	static {
 		factoryMap = new HashMap<>();
 		factoryMap.put("radio", new RadioQuestionFactory());
-		factoryMap.put("music", new MusicRadioQuestionFactory());
-		factoryMap.put("image", new ImageRadioQuestionFactory());
+//		factoryMap.put("music", new MusicRadioQuestionFactory()); // we should not create another factories
+//		factoryMap.put("image", new ImageRadioQuestionFactory()); // that's all radio questions
+		// e.g. factoryMap.put("checkBox", new ...Factory()); // just marked for another types of question
 	}
 
 	@FXML AnchorPane mainStudy;
@@ -47,9 +48,11 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 
     public IQuestion currentQuestion;
 
-	int trackNumber = 1; // it's weird place for this var, but it don't destroy anything
+//	int trackNumber = 1; // it's weird place for this var, but it don't destroy anything
+//  it was extremly ugly!
 
-	@FXML public void startStudy() {
+
+	@FXML public void startStudy() throws FileNotFoundException {
 		if (fileName == null) {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Jest error");
@@ -61,10 +64,17 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 	    }
 	}
 	
-	@FXML public void displayQuestion() {
+	@FXML public void displayQuestion() throws FileNotFoundException {
         whichQuestion++;
 		mainStudy.getChildren().clear();
-		Node questionComponent = readQuestionFromFile(whichQuestion, getClass().getResourceAsStream(fileName));
+
+		// below historical code
+//		InputStream is = getClass().getResourceAsStream(System.getProperty("user.dir")
+//				+ File.separator + "target" + File.separator + "classes"
+//				+ File.separator + "details" +  fileName); // it is null, so whole program doesn't work.
+//		InputStream is = getClass().getResourceAsStream(fileName); // it is null, so whole program doesn't work.
+		Node questionComponent = readQuestionFromFile(whichQuestion);
+		// maybe better will be: questionComponent = currentQuestion.getRenderedQuestion();
 		if (questionComponent != null){
 			String questionTitle = "Pytanie " + String.valueOf(whichQuestion+1);
 			titledPane.setText(questionTitle);
@@ -75,22 +85,24 @@ public class MainScreenController implements QuestionAnsweredEventListener {
         }
 
 	}
-	
-
 
     private void endStudy() {
         mainStudy.getChildren().clear();
         mainStudy.getChildren().add(new Label("Thank you!"));
     }
 
-    private Node readQuestionFromFile(int i, InputStream resourceAsStream) {
-		BufferedReader br = new BufferedReader(new InputStreamReader(resourceAsStream));
-		String currentLine;
+    private Node readQuestionFromFile(int i) throws FileNotFoundException {
+        ResourcesLoader loader = new ResourcesLoader("details");
+        File questionFile = loader.loadFile(fileName);
+		BufferedReader br = new BufferedReader(new FileReader(questionFile)); // Files are easier than InputStream
+        String currentLine;
 		int which = 0;
 		List<String> questionLines = new ArrayList<>();
 		boolean readingQuestions = false;
 		String questionType = null;
 		String questionId = null;
+		String questionExtrasType = null;
+		String questionExtrasFile = null;
 		try {
 			while ((currentLine = br.readLine()) != null) {
 				if (currentLine.startsWith("StartQuestion")) { // begin reading questions
@@ -110,6 +122,14 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 								questionId = givenID[1];
 							}
 						}
+						currentLine = br.readLine(); // second line of study details contains type and file of extras
+						String[] elements2 = currentLine.split(" "); // for future image+music (mixed) questions.
+						if (elements2.length > 0 && !elements2[0].equals("")) {
+							// shold be 'for' here if we'll want to extend application to allow multiple images/music files or even mixed.
+							String[] extraTypeAndFile = elements2[1].split("=");
+							questionExtrasType = elements2[0];
+							questionExtrasFile = elements2[1];
+						}
 						if (questionType == null) {
 							throw new IllegalArgumentException("Invalid file format: StartQuestion type=<type>");
 						}
@@ -122,13 +142,9 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 				} else {
 					if (readingQuestions) {
 						if (currentLine.startsWith("EndQuestion")) {
+							// build question
 							if (factoryMap.containsKey(questionType)) {
-								currentQuestion = factoryMap.get(questionType).createQuestion(questionLines, questionId);
-								if (questionType.equals("music")){
-                                    MusicRadioQuestion musicQuestion = (MusicRadioQuestion) currentQuestion;
-                                    musicQuestion.runTrack(trackNumber) ;
-									trackNumber++;
-								}
+								currentQuestion = factoryMap.get(questionType).createQuestion(questionLines, questionId, questionType, questionExtrasType, questionExtrasFile);
 								currentQuestion.addQuestionAnsweredListener(this);
 								return currentQuestion.getRenderedQuestion();
 							} else {
@@ -147,36 +163,34 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 	}
 
 	@Override
-	public void handleEvent(QuestionAnsweredEvent event) {
-		IQuestion question = event.getQuestion(); // KS: this line!
+	public void handleEvent(QuestionAnsweredEvent event) throws FileNotFoundException {
+		IQuestion question = event.getQuestion();
 		Answer answer = event.getAnswer();
-		System.out.println(question.getId());
-		System.out.println(answer.getAnswer());
         event.saveToFile();
-		if (question instanceof MusicRadioQuestion){ // KS: we can use question = event.getQuestion(); instead of currentquestion here, can't we?
-            // KZ: Yes, we can. ;)
-            ((MusicRadioQuestion) question).terminateTrack();
-		}
-        displayQuestion(); 
-	}
+        question.terminate();
+        try {
+            displayQuestion();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 	public void chooseFile() {
 		 FileChooser fileChooser = new FileChooser();
-		 String currentDir = System.getProperty("user.dir") + File.separator + "target" + File.separator + "classes" + File.separator + "kek" + File.separator + "study"+ File.separator;
-		// it was mistaken
-
-         File file = new File(currentDir); // Should open in our working directory by default now.
+		 String currentDir = System.getProperty("user.dir") + File.separator + "target" + File.separator + "classes" +
+                 File.separator + "details" + File.separator;
+         File file = new File(currentDir); // Should open in our working directory + path to study details
          fileChooser.setInitialDirectory(file);
 		 fileChooser.setTitle("Open Resource File");
 		 fileChooser.getExtensionFilters().addAll(
 				 new ExtensionFilter("Question Files", "*.sqf"),
 		         new ExtensionFilter("Text Files", "*.txt"),
 		         new ExtensionFilter("All Files", "*.*"));
-//		 File selectedFile = fileChooser.showOpenDialog(mainStudy.getScene().getWindow());
 		 File selectedFile = fileChooser.showOpenDialog(mainStudy.getScene().getWindow());
 		 if (selectedFile != null){
 			 fileName = selectedFile.getName();
 			 fileNameLabel.setText(fileName);
-	}}
+		}
+	}
 	
 }

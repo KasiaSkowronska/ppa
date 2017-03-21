@@ -11,8 +11,6 @@ import javafx.scene.control.ToggleGroup;
 public class RadioQuestion extends QuestionImp {
 	
 	protected ToggleGroup group;
-	
-	
 
 	public RadioQuestion(Node renderedQuestion, String id, ToggleGroup group) {
 		super(renderedQuestion, id);
@@ -50,10 +48,6 @@ public class RadioQuestion extends QuestionImp {
 	}
 
 
-
-
-
-
-
-
+	public void addExtras(String questionExtras) {
+	}
 }
