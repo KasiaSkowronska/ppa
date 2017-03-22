@@ -11,6 +11,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
 
 public class ImageRadioQuestionFactory extends RadioQuestionFactory {
+    // this class should be removed
 
 //@Override
 //public QuestionImp createQuestion(List<String> lines, String questionId, String questionType, String questionExtrasType, String id) throws IOException {

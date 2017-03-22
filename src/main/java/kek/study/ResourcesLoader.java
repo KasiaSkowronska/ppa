@@ -22,7 +22,6 @@ public class ResourcesLoader {
         String fileDir = getFileDir(fileName);
         File file = new File(fileDir);
         return file;
-        
     }
 
     public Image loadImage(String fileName) {
@@ -30,7 +29,6 @@ public class ResourcesLoader {
         final Image image = new Image(fileDir);
         return image;
     }
-
 
     public String getFileDir(String fileName){
         String fileDir = System.getProperty("user.dir") + File.separator + "target" + File.separator + "classes"

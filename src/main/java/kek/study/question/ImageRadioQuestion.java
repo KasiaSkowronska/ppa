@@ -15,6 +15,8 @@ import java.io.File;
 
 public class ImageRadioQuestion extends RadioQuestion {
 
+    // this class do nothing...
+
     public ImageRadioQuestion(Node renderedQuestion, String id, ToggleGroup group) {
         super(renderedQuestion, id, group);
     }

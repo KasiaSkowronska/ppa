@@ -15,6 +15,7 @@ import java.io.File;
 public class MusicRadioQuestion extends RadioQuestion {
 
     // doesn't work. Need to be rethinked.
+    // I think it need his own mediaPlayer with one track given by factory, when created.
 
     public MediaPlayer mediaPlayer;
 

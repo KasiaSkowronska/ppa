@@ -1,19 +1,14 @@
 package kek.study.question;
 
 import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javafx.scene.layout.GridPane;
 import kek.study.question.event.QuestionAnsweredEvent;
 import kek.study.question.event.QuestionAnsweredEventListener;
-
-
 import javafx.scene.Node;
 
 public abstract class QuestionImp implements IQuestion {
-	
+
 	protected Node renderedQuestion;
 	protected String id;
 	protected List<QuestionAnsweredEventListener> listeners;
@@ -32,13 +27,11 @@ public abstract class QuestionImp implements IQuestion {
 	@Override
 	public void addQuestionAnsweredListener(QuestionAnsweredEventListener listener) {
 		listeners.add(listener);
-
 	}
 
 	@Override
 	public void removeQuestionAnsweredListener(QuestionAnsweredEventListener listener) {
 		listeners.remove(listener);
-
 	}
 
 	@Override
@@ -58,9 +51,7 @@ public abstract class QuestionImp implements IQuestion {
 		for (QuestionAnsweredEventListener listener : listeners) {
 			listener.handleEvent(event);
 		}
-
 	}
-
 
     public void setRenderedQuestion(Node renderedQuestion) {
         this.renderedQuestion = renderedQuestion;

@@ -16,11 +16,9 @@ import kek.study.question.event.QuestionAnsweredEventListener;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.TitledPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
-
-
-import javafx.scene.control.TitledPane;
 
 public class MainScreenController implements QuestionAnsweredEventListener {
 
@@ -50,7 +48,6 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 
 //	int trackNumber = 1; // it's weird place for this var, but it don't destroy anything
 //  it was extremly ugly!
-
 
 	@FXML public void startStudy() throws FileNotFoundException {
 		if (fileName == null) {
@@ -83,7 +80,6 @@ public class MainScreenController implements QuestionAnsweredEventListener {
         else {
             endStudy();
         }
-
 	}
 
     private void endStudy() {

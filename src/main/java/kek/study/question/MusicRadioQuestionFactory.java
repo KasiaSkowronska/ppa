@@ -14,6 +14,8 @@ import java.util.List;
  * Created by Konrad on 2017-01-02.
  */
 public class MusicRadioQuestionFactory extends RadioQuestionFactory {
+    // this class will be removed.
+    
 //    @Override
 //    public QuestionImp createQuestion(List<String> lines, String questionId, String questionType, String questionExtrasType, String id) throws IOException {
 //        VBox questionBox = new VBox();

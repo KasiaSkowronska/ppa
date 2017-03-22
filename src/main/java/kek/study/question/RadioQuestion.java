@@ -20,13 +20,11 @@ public class RadioQuestion extends QuestionImp {
 	@Override
 	public void addQuestionAnsweredListener(QuestionAnsweredEventListener listener) {
 		listeners.add(listener);
-
 	}
 
 	@Override
 	public void removeQuestionAnsweredListener(QuestionAnsweredEventListener listener) {
 		listeners.remove(listener);
-
 	}
 
 	@Override
@@ -39,14 +37,12 @@ public class RadioQuestion extends QuestionImp {
 		return id;
 	}
 
-
 	@Override
 	public Answer getAnswer() {
 		Toggle data = group.getSelectedToggle();
 		Answer answer = new Answer(data == null ? null : (String) data.getUserData());
 		return answer;
 	}
-
 
 	public void addExtras(String questionExtras) {
 	}

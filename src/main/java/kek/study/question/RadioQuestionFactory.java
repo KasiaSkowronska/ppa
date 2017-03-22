@@ -29,7 +29,7 @@ public class RadioQuestionFactory extends QuestionFactory {
         }
 
         RadioQuestion question = createSpecificQuestion(questionExtrasType, questionExtrasFile); //
-        question = addExtras(question, ... , ...);
+//        question = addExtras(question, ... , ...);
 
         Button finishButton = new Button("Submit");
         finishButton.setOnAction((event) -> {
@@ -44,7 +44,7 @@ public class RadioQuestionFactory extends QuestionFactory {
         return question;
     }
 
-    private RadioQuestion createSpecificQuestion(String questionExtrasType, String questionExtrasFile) {
+    private QuestionImp createSpecificQuestion(String questionExtrasType, String questionExtrasFile) {
         QuestionImp question = null;
         if (questionExtrasType == null) {
             question = new SimplyRadioQuestion();
