@@ -20,6 +20,7 @@ public class RadioQuestionFactory extends QuestionFactory {
         questionBox.getChildren().add(new Label(questionContent));
         ToggleGroup group = new ToggleGroup();
         for (int i = 1; i < lines.size(); i+=2) {
+        	// TO DO: handle wrong number of lines - if line(i+1) is empty
             String answer = lines.get(i);
             String answerCode = lines.get(i+1);
             RadioButton button = new RadioButton(answer);
@@ -29,6 +30,7 @@ public class RadioQuestionFactory extends QuestionFactory {
         }
 
         RadioQuestion question = new RadioQuestion(questionBox, questionId, group);
+        
         if (questionExtrasType != null){
         addExtras(question, questionExtrasType, questionExtrasFile);}
 

@@ -1,5 +1,4 @@
-StartQuestion type=radio ID=1 
-music=ancora_qui.mp3
+StartQuestion type=radio ID=1 music=ancora_qui.mp3
 W filmie którego reżysera została użyta ta piosenka?
 Davida Lyncha
 A
@@ -11,10 +10,8 @@ Tima Burtona
 D
 EndQuestion
 
-StartQuestion type=music ID=2
-
+StartQuestion type=radio ID=2 music=i_wonder.mp3
 W którym roku została wydana płyta, na której znalazł się ten uwtór?
-i_wonder.mp3
 1967
 A
 1970

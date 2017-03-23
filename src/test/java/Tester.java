@@ -18,42 +18,42 @@ import java.util.List;
  */
 public class Tester {
 
-//    public static class MockApp extends Application {
-//        @Override
-//        public void start(Stage primaryStage) throws Exception {
-//            // noop
-//        }
+    public static class MockApp extends Application {
+        @Override
+        public void start(Stage primaryStage) throws Exception {
+            // noop
+        }
+    }
+
+    @BeforeClass
+    public static void initJFX() {
+        Thread t = new Thread("JavaFX Init Thread") {
+            public void run() {
+                Application.launch(MockApp.class, new String[0]);
+            }
+        };
+        t.setDaemon(true);
+        t.start();
+    }
+//
+//    private RadioQuestion createMockQuestion() throws IOException {
+//        RadioQuestionFactory rqf = new RadioQuestionFactory();
+//        List<String> lines = new ArrayList<>();
+//        lines.add("The Question");
+//        lines.add("First answer");
+//        lines.add("FA");
+//        lines.add("Second answer");
+//        lines.add("SA");
+//        return rqf.createQuestion(lines, "LINES");
+//        return (RadioQuestion) rqf.createQuestion(lines, questionId, questionType, questionExtrasType, "LINES");
 //    }
 //
-//    @BeforeClass
-//    public static void initJFX() {
-//        Thread t = new Thread("JavaFX Init Thread") {
-//            public void run() {
-//                Application.launch(MockApp.class, new String[0]);
-//            }
-//        };
-//        t.setDaemon(true);
-//        t.start();
+//    @Test
+//    public void testCreateQuestion() throws IOException {
+//        RadioQuestion q = createMockQuestion();
+//        Assert.assertNotNull(q);
 //    }
-//
-////    private RadioQuestion createMockQuestion() throws IOException {
-////        RadioQuestionFactory rqf = new RadioQuestionFactory();
-////        List<String> lines = new ArrayList<>();
-////        lines.add("The Question");
-////        lines.add("First answer");
-////        lines.add("FA");
-////        lines.add("Second answer");
-////        lines.add("SA");
-//////        return rqf.createQuestion(lines, "LINES");
-////        return (RadioQuestion) rqf.createQuestion(lines, questionId, questionType, questionExtrasType, "LINES");
-////    }
-////
-////    @Test
-////    public void testCreateQuestion() throws IOException {
-////        RadioQuestion q = createMockQuestion();
-////        Assert.assertNotNull(q);
-////    }
-////
+
 ////    @Test
 ////    public void testRadioNoDefaultAnswer() throws IOException {
 ////        RadioQuestion q = createMockQuestion();

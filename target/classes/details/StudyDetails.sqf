@@ -1,5 +1,5 @@
 StartQuestion type=radio ID=5
-
+music=plik
 Który kotek ma najdłuższy ogon?
 Skwarka
 A
@@ -12,7 +12,6 @@ D
 EndQuestion
 
 StartQuestion type=radio ID=2
-
 Ile cm ma ogon kota z najdłuższym ogonem?
 10cm
 A

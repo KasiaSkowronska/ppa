@@ -19,7 +19,7 @@ import java.io.File;
 public abstract class QuestionFactory implements IQuestionFactory {
 
     protected void addExtras(QuestionImp question, String extrasType, String extrasFile) {
-        // this function will modify question and extras to them according to our old methods.
+
     	System.out.println(extrasType);
         if (extrasType.equals("music")){
         	String path = System.getProperty("user.dir") + File.separator + "target" + File.separator + "classes" +
@@ -51,6 +51,7 @@ public abstract class QuestionFactory implements IQuestionFactory {
             final HBox pictureRegion = new HBox();
             pictureRegion.getChildren().add(imv);
             gridPane.add(pictureRegion, 1, 1);
+            
 
             gridPane.add(question.getRenderedQuestion(), 3, 1);
             question.setRenderedQuestion(gridPane); // it's weird, there is a need to change it.

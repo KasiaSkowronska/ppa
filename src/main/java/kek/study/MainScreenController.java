@@ -80,77 +80,90 @@ public class MainScreenController implements QuestionAnsweredEventListener {
         mainStudy.getChildren().add(new Label("Thank you!"));
     }
 
+
+    
     private IQuestion readQuestionFromFile(int i) throws FileNotFoundException {
         ResourcesLoader loader = new ResourcesLoader("details");
         File questionFile = loader.loadFile(fileName);
-		BufferedReader br = new BufferedReader(new FileReader(questionFile)); // Files are easier than InputStream
+		BufferedReader br = new BufferedReader(new FileReader(questionFile)); 
+		
+		boolean readingQuestions = false;
+		
         String currentLine;
 		int which = 0;
 		List<String> questionLines = new ArrayList<>();
-		boolean readingQuestions = false;
 		String questionType = null;
 		String questionId = null;
 		String questionExtrasType = null;
 		String questionExtrasFile = null;
+		
+		Map<String, String> questionParameters = new HashMap<String, String>();
 		try {
 			while ((currentLine = br.readLine()) != null) {
 				if (currentLine.startsWith("StartQuestion")) { // begin reading questions
 					
-					if (readingQuestions) {
-						throw new IllegalArgumentException("Invalid file format: StartQuestion without EndQuestion");
-					}
-					
-					if (which == i) {
-						readingQuestions = true;
-						String[] elements = currentLine.split(" ");
-						System.out.println(currentLine);
-						if (elements.length > 1) {
-							String[] givenType = elements[1].split("=");
-							if (givenType.length > 1) {
-								questionType = givenType[1];
-							}
-							if (elements.length > 2){
-								String[] givenID = elements[2].split("=");
-								questionId = givenID[1];
-								//questionId = "id";
+						if (readingQuestions) {
+							throw new IllegalArgumentException("Invalid file format: StartQuestion without EndQuestion");
+						}
+						
+						// LOADING QUESTION PARAMETERS
+						if (which == i) {
+							readingQuestions = true;
+							String[] elements = currentLine.split(" ");
+							System.out.println(currentLine);
+							for (String elt : elements){
+								String[] parameter = elt.split("=");
+								if (parameter.length > 1) {
+								questionParameters.put(parameter[0], parameter[1]);}
 							}
 						}
-						currentLine = br.readLine(); // second line of study details contains type and file of extras
-						String[] elements2 = currentLine.split(" "); // for future image+music (mixed) questions.
-						System.out.println(elements2);
-						if (elements2.length > 0) {
-							// shold be 'for' here if we'll want to extend application to allow multiple images/music files or even mixed.
-							String[] extraTypeAndFile = elements2[0].split("=");
-							questionExtrasType = extraTypeAndFile[0];
-							questionExtrasFile = extraTypeAndFile[1];
-						}
-						if (questionType == null) {
-							throw new IllegalArgumentException("Invalid file format: StartQuestion type=<type>");
-						}
-						if (questionId == null) {
-							throw new IllegalArgumentException("Invalid file format: StartQuestion ID=<ID>");
-						}
-					} else {
-						which++;
-					}
+						else {
+						which++;}
+						
 				} else {
-					if (readingQuestions) {
-						if (currentLine.startsWith("EndQuestion")) {
-							// build question
-							if (factoryMap.containsKey(questionType)) {
-								currentQuestion = factoryMap.get(questionType).createQuestion(questionLines, questionId, questionType, questionExtrasType, questionExtrasFile);
-								currentQuestion.addQuestionAnsweredListener(this);
-								return currentQuestion;
-							} else {
-								throw new IllegalArgumentException("Do not have a factory for question type: " + questionType);
-							}
+					
+						if (readingQuestions) {
+						
+							if (currentLine.startsWith("EndQuestion")) {
+								
+								// BUILDING QUESTION
+								// GETTING TYPE AND ID
+								if (questionParameters.containsKey("type")){
+									questionType = questionParameters.get("type");
+								} else {
+									throw new IllegalArgumentException("Invalid file format: StartQuestion type=<type>");}
+								
+								if (questionParameters.containsKey("ID")){
+									questionId = questionParameters.get("ID");
+								} else {
+									throw new IllegalArgumentException("Invalid file format: StartQuestion ID=<ID>");}
+								
+								// GETTING EXTRAS - to do: make a list of extras, make it more universal
+								if (questionParameters.containsKey("music")){
+									questionExtrasType = "music";
+									questionExtrasFile = questionParameters.get("music");
+								}
+								if (questionParameters.containsKey("image")){
+									questionExtrasType = "image";
+									questionExtrasFile = questionParameters.get("image");
+								}
+								
+								// USING FACTORY
+								if (factoryMap.containsKey(questionType)) {
+									currentQuestion = factoryMap.get(questionType).createQuestion(questionLines, questionId, questionType, questionExtrasType, questionExtrasFile);
+									currentQuestion.addQuestionAnsweredListener(this);
+									return currentQuestion;
+								} else {
+									throw new IllegalArgumentException("Do not have a factory for question type: " + questionType);
+								}
+							
 						} else {						
 							questionLines.add(currentLine.trim());
 						}
 					}
 				}
-			}
-		} catch (IOException e) {
+			
+		}} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return null;

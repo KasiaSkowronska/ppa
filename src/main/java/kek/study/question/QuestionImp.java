@@ -67,7 +67,6 @@ public abstract class QuestionImp implements IQuestion {
 
 	
 // GETTERS & SETTERS
-	
 	@Override
 	public Node getRenderedQuestion() {
 		return renderedQuestion;
