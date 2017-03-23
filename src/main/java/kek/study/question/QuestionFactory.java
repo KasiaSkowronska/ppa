@@ -5,6 +5,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import kek.study.ResourcesLoader;
 
 import javax.xml.soap.Node;
@@ -15,9 +18,15 @@ import java.io.File;
  */
 public abstract class QuestionFactory implements IQuestionFactory {
 
-    protected QuestionImp addExtras(QuestionImp question, String extrasType, String extrasFile) {
+    protected void addExtras(QuestionImp question, String extrasType, String extrasFile) {
         // this function will modify question and extras to them according to our old methods.
+    	System.out.println(extrasType);
         if (extrasType.equals("music")){
+        	String path = System.getProperty("user.dir") + File.separator + "target" + File.separator + "classes" +
+                    File.separator + "music" + File.separator;
+        	Media media = new Media(new File(path + extrasFile).toURI().toString());
+        	MediaPlayer mediaPlayer = new MediaPlayer(media);
+        	question.setMediaPlayer(mediaPlayer);
 
         }
         if (extrasType.equals("image")){
@@ -48,6 +57,5 @@ public abstract class QuestionFactory implements IQuestionFactory {
 
         }
 
-        return question;
     }
 }

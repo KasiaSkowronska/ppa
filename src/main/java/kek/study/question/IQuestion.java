@@ -9,6 +9,7 @@ public interface IQuestion extends QuestionAnsweredEventNotifier {
 	public Node getRenderedQuestion();
 	public String getId();
 	public Answer getAnswer();
+	public void init();
 	public void terminate(); // by default do nothing. Will be overwritten in subclasses
 
 }

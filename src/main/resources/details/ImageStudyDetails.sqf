@@ -1,5 +1,4 @@
-StartQuestion type=image ID=1
-lis1.jpg
+StartQuestion type=radio ID=1 image=lis1.jpg
 Skończ zdanie. "Gdy patrzę na tego liska..."
 Czuję się szczęśliwy/a.
 A
@@ -9,8 +8,7 @@ Mam ochotę być liskiem.
 C
 EndQuestion
 
-StartQuestion type=image ID=2
-lis2.jpg
+StartQuestion type=radio ID=2 image=lis2.jpg
 Skończ zdanie. "Gdy patrzę na tego liska..."
 Czuję się szczęśliwy/a.
 A

@@ -2,9 +2,6 @@ package kek.study.question;
 
 
 import javafx.scene.control.Toggle;
-import kek.study.question.event.QuestionAnsweredEventListener;
-
-
 import javafx.scene.Node;
 import javafx.scene.control.ToggleGroup;
 
@@ -17,25 +14,6 @@ public class RadioQuestion extends QuestionImp {
 		this.group = group;
 	}
 
-	@Override
-	public void addQuestionAnsweredListener(QuestionAnsweredEventListener listener) {
-		listeners.add(listener);
-	}
-
-	@Override
-	public void removeQuestionAnsweredListener(QuestionAnsweredEventListener listener) {
-		listeners.remove(listener);
-	}
-
-	@Override
-	public Node getRenderedQuestion() {
-		return renderedQuestion;
-	}
-
-	@Override
-	public String getId() {
-		return id;
-	}
 
 	@Override
 	public Answer getAnswer() {
@@ -44,6 +22,5 @@ public class RadioQuestion extends QuestionImp {
 		return answer;
 	}
 
-	public void addExtras(String questionExtras) {
-	}
+
 }

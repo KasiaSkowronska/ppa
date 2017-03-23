@@ -1,4 +1,4 @@
-StartQuestion type=radio ID=1 // TODO: parse EXTRAS
+StartQuestion type=radio ID=1 
 music=ancora_qui.mp3
 W filmie którego reżysera została użyta ta piosenka?
 Davida Lyncha

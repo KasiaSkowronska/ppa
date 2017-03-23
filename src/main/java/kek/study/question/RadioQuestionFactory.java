@@ -16,10 +16,10 @@ public class RadioQuestionFactory extends QuestionFactory {
     public QuestionImp createQuestion(List<String> lines, String questionId, String questionType,
                                       String questionExtrasType, String questionExtrasFile) throws IOException {
         VBox questionBox = new VBox();
-        String questionContent = lines.get(1);
+        String questionContent = lines.get(0);
         questionBox.getChildren().add(new Label(questionContent));
         ToggleGroup group = new ToggleGroup();
-        for (int i = 2; i < lines.size(); i+=2) {
+        for (int i = 1; i < lines.size(); i+=2) {
             String answer = lines.get(i);
             String answerCode = lines.get(i+1);
             RadioButton button = new RadioButton(answer);
@@ -28,11 +28,13 @@ public class RadioQuestionFactory extends QuestionFactory {
             questionBox.getChildren().add(button);
         }
 
-        RadioQuestion question = createSpecificQuestion(questionExtrasType, questionExtrasFile); //
-//        question = addExtras(question, ... , ...);
+        RadioQuestion question = new RadioQuestion(questionBox, questionId, group);
+        if (questionExtrasType != null){
+        addExtras(question, questionExtrasType, questionExtrasFile);}
 
         Button finishButton = new Button("Submit");
         finishButton.setOnAction((event) -> {
+        	System.out.println(question.listeners.size());
             try {
                 question.fireEvent();
             } catch (FileNotFoundException e) {
@@ -44,19 +46,5 @@ public class RadioQuestionFactory extends QuestionFactory {
         return question;
     }
 
-    private QuestionImp createSpecificQuestion(String questionExtrasType, String questionExtrasFile) {
-        QuestionImp question = null;
-        if (questionExtrasType == null) {
-            question = new SimplyRadioQuestion();
-        }
-        if (questionExtrasType.equals("music")) {
-//            question = new MusicRadioQuestion(mediaPlayer);
-        }
-        if (questionExtrasType.equals("image")) {
-            question = new ImageRadioQuestion();
-        }
-        question = addExtras(question, questionExtrasType, questionExtrasFile);
-        return question;
-    }
 
 }

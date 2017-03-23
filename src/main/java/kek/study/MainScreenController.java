@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import kek.study.question.*;
 import kek.study.question.event.QuestionAnsweredEvent;
 import kek.study.question.event.QuestionAnsweredEventListener;
-
+import sun.security.util.Length;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
@@ -23,31 +23,30 @@ import javafx.stage.FileChooser.ExtensionFilter;
 public class MainScreenController implements QuestionAnsweredEventListener {
 
     protected PrintWriter out;
-	private int whichQuestion;
 	private String fileName; // file that contains study details
-
-	public MainScreenController() throws FileNotFoundException {
-        out = new PrintWriter("answers.answ");
-		this.whichQuestion = -1; // we count from 0.
-	}
-
-	private static Map<String, IQuestionFactory> factoryMap;
-	static {
-		factoryMap = new HashMap<>();
-		factoryMap.put("radio", new RadioQuestionFactory());
-//		factoryMap.put("music", new MusicRadioQuestionFactory()); // we should not create another factories
-//		factoryMap.put("image", new ImageRadioQuestionFactory()); // that's all radio questions
-		// e.g. factoryMap.put("checkBox", new ...Factory()); // just marked for another types of question
-	}
-
+	
 	@FXML AnchorPane mainStudy;
 	@FXML Label fileNameLabel; 
 	@FXML TitledPane titledPane;
 
     public IQuestion currentQuestion;
+    private int whichQuestion;
+    
+    
+	private static Map<String, IQuestionFactory> factoryMap;
+	static {
+		factoryMap = new HashMap<>();
+		factoryMap.put("radio", new RadioQuestionFactory());
+		// e.g. factoryMap.put("checkBox", new ...Factory()); // just marked for another types of question
+	}
 
-//	int trackNumber = 1; // it's weird place for this var, but it don't destroy anything
-//  it was extremly ugly!
+	
+	
+	public MainScreenController() throws FileNotFoundException {
+        out = new PrintWriter("answers.answ");
+		this.whichQuestion = -1; // we count from 0.
+	}
+
 
 	@FXML public void startStudy() throws FileNotFoundException {
 		if (fileName == null) {
@@ -64,18 +63,12 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 	@FXML public void displayQuestion() throws FileNotFoundException {
         whichQuestion++;
 		mainStudy.getChildren().clear();
-
-		// below historical code
-//		InputStream is = getClass().getResourceAsStream(System.getProperty("user.dir")
-//				+ File.separator + "target" + File.separator + "classes"
-//				+ File.separator + "details" +  fileName); // it is null, so whole program doesn't work.
-//		InputStream is = getClass().getResourceAsStream(fileName); // it is null, so whole program doesn't work.
-		Node questionComponent = readQuestionFromFile(whichQuestion);
-		// maybe better will be: questionComponent = currentQuestion.getRenderedQuestion();
+		IQuestion questionComponent = readQuestionFromFile(whichQuestion);
 		if (questionComponent != null){
 			String questionTitle = "Pytanie " + String.valueOf(whichQuestion+1);
 			titledPane.setText(questionTitle);
-            mainStudy.getChildren().add(questionComponent);
+            mainStudy.getChildren().add(questionComponent.getRenderedQuestion());
+            questionComponent.init();
         }
         else {
             endStudy();
@@ -87,7 +80,7 @@ public class MainScreenController implements QuestionAnsweredEventListener {
         mainStudy.getChildren().add(new Label("Thank you!"));
     }
 
-    private Node readQuestionFromFile(int i) throws FileNotFoundException {
+    private IQuestion readQuestionFromFile(int i) throws FileNotFoundException {
         ResourcesLoader loader = new ResourcesLoader("details");
         File questionFile = loader.loadFile(fileName);
 		BufferedReader br = new BufferedReader(new FileReader(questionFile)); // Files are easier than InputStream
@@ -102,12 +95,15 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 		try {
 			while ((currentLine = br.readLine()) != null) {
 				if (currentLine.startsWith("StartQuestion")) { // begin reading questions
+					
 					if (readingQuestions) {
 						throw new IllegalArgumentException("Invalid file format: StartQuestion without EndQuestion");
 					}
+					
 					if (which == i) {
 						readingQuestions = true;
 						String[] elements = currentLine.split(" ");
+						System.out.println(currentLine);
 						if (elements.length > 1) {
 							String[] givenType = elements[1].split("=");
 							if (givenType.length > 1) {
@@ -116,15 +112,17 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 							if (elements.length > 2){
 								String[] givenID = elements[2].split("=");
 								questionId = givenID[1];
+								//questionId = "id";
 							}
 						}
 						currentLine = br.readLine(); // second line of study details contains type and file of extras
 						String[] elements2 = currentLine.split(" "); // for future image+music (mixed) questions.
-						if (elements2.length > 0 && !elements2[0].equals("")) {
+						System.out.println(elements2);
+						if (elements2.length > 0) {
 							// shold be 'for' here if we'll want to extend application to allow multiple images/music files or even mixed.
-							String[] extraTypeAndFile = elements2[1].split("=");
-							questionExtrasType = elements2[0];
-							questionExtrasFile = elements2[1];
+							String[] extraTypeAndFile = elements2[0].split("=");
+							questionExtrasType = extraTypeAndFile[0];
+							questionExtrasFile = extraTypeAndFile[1];
 						}
 						if (questionType == null) {
 							throw new IllegalArgumentException("Invalid file format: StartQuestion type=<type>");
@@ -142,7 +140,7 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 							if (factoryMap.containsKey(questionType)) {
 								currentQuestion = factoryMap.get(questionType).createQuestion(questionLines, questionId, questionType, questionExtrasType, questionExtrasFile);
 								currentQuestion.addQuestionAnsweredListener(this);
-								return currentQuestion.getRenderedQuestion();
+								return currentQuestion;
 							} else {
 								throw new IllegalArgumentException("Do not have a factory for question type: " + questionType);
 							}

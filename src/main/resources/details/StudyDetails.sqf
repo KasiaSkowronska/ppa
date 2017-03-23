@@ -1,5 +1,5 @@
-StartQuestion type=radio ID=1
-Intentionally empty line left (no files connected with this type of question).
+StartQuestion type=radio ID=5
+music=plik
 Który kotek ma najdłuższy ogon?
 Skwarka
 A
@@ -12,7 +12,6 @@ D
 EndQuestion
 
 StartQuestion type=radio ID=2
-Intentionally empty line left (no files connected with this type of question).
 Ile cm ma ogon kota z najdłuższym ogonem?
 10cm
 A
@@ -25,7 +24,6 @@ D
 EndQuestion
 
 StartQuestion type=radio ID=3
-Intentionally empty line left (no files connected with this type of question).
 Ile wynosi suma długości ogonów wszystich kotów?
 120 cm
 A
