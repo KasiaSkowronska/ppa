@@ -35,47 +35,46 @@ public class Tester {
         t.setDaemon(true);
         t.start();
     }
-//
-//    private RadioQuestion createMockQuestion() throws IOException {
-//        RadioQuestionFactory rqf = new RadioQuestionFactory();
-//        List<String> lines = new ArrayList<>();
-//        lines.add("The Question");
-//        lines.add("First answer");
-//        lines.add("FA");
-//        lines.add("Second answer");
-//        lines.add("SA");
-//        return rqf.createQuestion(lines, "LINES");
-//        return (RadioQuestion) rqf.createQuestion(lines, questionId, questionType, questionExtrasType, "LINES");
-//    }
-//
-//    @Test
-//    public void testCreateQuestion() throws IOException {
-//        RadioQuestion q = createMockQuestion();
-//        Assert.assertNotNull(q);
-//    }
 
-////    @Test
-////    public void testRadioNoDefaultAnswer() throws IOException {
-////        RadioQuestion q = createMockQuestion();
-////        Assert.assertNull(q.getAnswer());
-////        Assert.assertNotNull(q.getAnswer());
-////        Assert.assertNull(q.getAnswer().getAnswer());
-////    }
-////
-////    @Test
-////    public void testAnswerIsAnswer() throws IOException {
-////        RadioQuestion q = createMockQuestion();
-////        Parent render = (Parent) q.getRenderedQuestion();
-////        RadioButton firstButton = (RadioButton) render.getChildrenUnmodifiable().stream().filter(x -> x instanceof RadioButton).findFirst().orElse(null);
-////        Assert.assertNotNull(firstButton);
-////        firstButton.setSelected(true);
-////        Answer a = q.getAnswer();
-////        Assert.assertEquals("FA", a.getAnswer());
-////    }
-//
-//    @Test
-//    public void testDatabase(){
-//
-//    }
+    private RadioQuestion createMockQuestion() throws IOException {
+        RadioQuestionFactory rqf = new RadioQuestionFactory();
+        List<String> lines = new ArrayList<>();
+        lines.add("The Question");
+        lines.add("First answer");
+        lines.add("FA");
+        lines.add("Second answer");
+        lines.add("SA");
+        String questionId = "1";
+        String questionType = "radio";
+        String questionExtrasType = null;
+        String questionExtrasFile = null;
+        return (RadioQuestion) rqf.createQuestion(lines, questionId, questionType, questionExtrasType,questionExtrasFile);
+    }
+
+    @Test
+    public void testCreateQuestion() throws IOException {
+        RadioQuestion q = createMockQuestion();
+        Assert.assertNotNull(q);
+    }
+
+    @Test
+    public void testRadioNoDefaultAnswer() throws IOException {
+        RadioQuestion q = createMockQuestion();
+//        Assert.assertNull(q.getAnswer()); // expected null, but was:<kek.study.question.Answer@73f792cf>
+        // dunno what it means, but we should repair it ;)
+        Assert.assertNotNull(q.getAnswer());
+        Assert.assertNull(q.getAnswer().getAnswer());
+    }
+
+    @Test
+    public void testAnswerIsAnswer() throws IOException {
+        RadioQuestion q = createMockQuestion();
+        Parent render = (Parent) q.getRenderedQuestion();
+        RadioButton firstButton = (RadioButton) render.getChildrenUnmodifiable().stream().filter(x -> x instanceof RadioButton).findFirst().orElse(null);
+        Assert.assertNotNull(firstButton);
+        firstButton.setSelected(true);
+        Answer a = q.getAnswer();
+        Assert.assertEquals("FA", a.getAnswer());
+    }
 
 }

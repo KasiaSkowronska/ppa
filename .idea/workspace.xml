@@ -2,32 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04d53410-f3ec-471c-8a3a-e7ac5758dd6e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kek/study/question/ImageRadioQuestion.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kek/study/question/ImageRadioQuestionFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kek/study/question/MusicRadioQuestion.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kek/study/question/MusicRadioQuestionFactory.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kek/study/MainScreenController.class" afterPath="$PROJECT_DIR$/target/classes/kek/study/MainScreenController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kek/study/question/QuestionFactory.class" afterPath="$PROJECT_DIR$/target/classes/kek/study/question/QuestionFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kek/study/question/QuestionImp.class" afterPath="$PROJECT_DIR$/target/classes/kek/study/question/QuestionImp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kek/study/question/RadioQuestionFactory.class" afterPath="$PROJECT_DIR$/target/classes/kek/study/question/RadioQuestionFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newdb.lck" afterPath="$PROJECT_DIR$/newdb.lck" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kek/study/question/event/QuestionAnsweredEvent.class" afterPath="$PROJECT_DIR$/target/classes/kek/study/question/event/QuestionAnsweredEvent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kek/study/question/event/QuestionAnsweredEventListener.class" afterPath="$PROJECT_DIR$/target/classes/kek/study/question/event/QuestionAnsweredEventListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kek/study/question/event/QuestionAnsweredEventNotifier.class" afterPath="$PROJECT_DIR$/target/classes/kek/study/question/event/QuestionAnsweredEventNotifier.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testdb.lck" afterPath="$PROJECT_DIR$/testdb.lck" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/answers.answ" afterPath="$PROJECT_DIR$/answers.answ" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kek/study/MainScreenController.java" afterPath="$PROJECT_DIR$/src/main/java/kek/study/MainScreenController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kek/study/question/QuestionImp.java" afterPath="$PROJECT_DIR$/src/main/java/kek/study/question/QuestionImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kek/study/question/RadioQuestionFactory.java" afterPath="$PROJECT_DIR$/src/main/java/kek/study/question/RadioQuestionFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newdb.log" afterPath="$PROJECT_DIR$/newdb.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newdb.properties" afterPath="$PROJECT_DIR$/newdb.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newdb.script" afterPath="$PROJECT_DIR$/newdb.script" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEvent.java" afterPath="$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEventListener.java" afterPath="$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEventListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEventNotifier.java" afterPath="$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEventNotifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/details/StudyDetails.sqf" afterPath="$PROJECT_DIR$/src/main/resources/details/StudyDetails.sqf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterPath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/details/StudyDetails.sqf" afterPath="$PROJECT_DIR$/target/classes/details/StudyDetails.sqf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testdb.log" afterPath="$PROJECT_DIR$/testdb.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testdb.properties" afterPath="$PROJECT_DIR$/testdb.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testdb.script" afterPath="$PROJECT_DIR$/testdb.script" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Tester.java" afterPath="$PROJECT_DIR$/src/test/java/Tester.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,61 +40,49 @@
       <file leaf-file-name="RadioQuestionFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/RadioQuestionFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="44" column="16" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="36" />
+            <state relative-caret-position="221">
+              <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuestionImp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/QuestionImp.java">
+      <file leaf-file-name="Tester.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Tester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="63" column="40" lean-forward="false" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+            <state relative-caret-position="935">
+              <caret line="70" column="47" lean-forward="false" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudyDetails.sqf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/details/StudyDetails.sqf">
+      <file leaf-file-name="RadioQuestion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/RadioQuestion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+            <state relative-caret-position="323">
+              <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="answers.answ" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/answers.answ">
+      <file leaf-file-name="ImageStudyDetails.sqf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/details/ImageStudyDetails.sqf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainScreenController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/MainScreenController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3366">
-              <caret line="217" column="38" lean-forward="false" selection-start-line="217" selection-start-column="38" selection-end-line="217" selection-end-column="38" />
-              <folding>
-                <marker date="1490804025670" expanded="true" signature="7189:7216" ph="SELECT * FRO... ANSWERS_TABLE" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -119,38 +90,13 @@
       <file leaf-file-name="QuestionAnsweredEvent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="69" column="62" lean-forward="false" selection-start-line="69" selection-start-column="62" selection-end-line="69" selection-end-column="62" />
+            <state relative-caret-position="1275">
+              <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1490803641423" expanded="true" signature="1733:1843" ph="CREATE TABLE... ANSWERS_TABLE" />
-                <marker date="1490803641423" expanded="true" signature="1993:2066" ph="INSERT INTO ANSWER_TABLE... " />
-                <marker date="1490803641423" expanded="true" signature="2993:3020" ph="SELECT * FRO... ANSWERS_TABLE" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/DatabaseTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="108" column="92" lean-forward="true" selection-start-line="108" selection-start-column="92" selection-end-line="108" selection-end-column="92" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1490801314271" expanded="true" signature="1381:1511" ph="CREATE TABLE... TESTTABLE" />
-                <marker date="1490801314271" expanded="true" signature="1780:1879" ph="INSERT INTO TESTTABLE... " />
-                <marker date="1490801314271" expanded="true" signature="2440:2521" ph="UPDATE TESTT... " />
-                <marker date="1490801314271" expanded="true" signature="2767:2790" ph="SELECT * FRO... TESTTABLE" />
-                <marker date="1490801314271" expanded="true" signature="3215:3278" ph="SELECT * FRO... TESTTABLE" />
-                <marker date="1490801314271" expanded="true" signature="4653:4666" ph="CREATE TABLE... NEWTABLE" />
-                <marker date="1490801314271" expanded="true" signature="4653:4774" ph="CREATE TABLE... NEWTABLEID" />
-                <marker date="1490801314271" expanded="true" signature="4653:4775" ph="CREATE TABLE... NEWTABLE" />
-                <marker date="1490801314271" expanded="true" signature="5069:5081" ph="INSERT INTO TESTTABLE... " />
-                <marker date="1490801314271" expanded="true" signature="5069:5138" ph="INSERT INTO TESTTABLE... " />
-                <marker date="1490801314271" expanded="true" signature="5069:5173" ph="INSERT INTO TESTTABLE... " />
-                <marker date="1490801314271" expanded="true" signature="6733:6755" ph="SELECT * FRO... NEWTABLE" />
-                <marker date="1490801314271" expanded="true" signature="6733:6756" ph="SELECT * FRO... NEWTABLE2" />
+                <marker date="1490823564980" expanded="true" signature="1733:1843" ph="CREATE TABLE... ANSWERS_TABLE" />
+                <marker date="1490823564980" expanded="true" signature="1993:2066" ph="INSERT INTO ANSWER_TABLE... " />
+                <marker date="1490823564980" expanded="true" signature="2993:3020" ph="SELECT * FRO... ANSWERS_TABLE" />
               </folding>
             </state>
           </provider>
@@ -230,14 +176,14 @@
         <option value="$PROJECT_DIR$/src/main/java/kek/study/question/MusicRadioQuestionFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/kek/study/question/RadioQuestion.java" />
         <option value="$PROJECT_DIR$/src/main/java/kek/study/ResourcesLoader.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Tester.java" />
         <option value="$PROJECT_DIR$/target/classes/details/MusicStudyDetails.sqf" />
-        <option value="$PROJECT_DIR$/src/main/resources/details/StudyDetails.sqf" />
-        <option value="$PROJECT_DIR$/src/test/java/DatabaseTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/kek/study/question/QuestionImp.java" />
         <option value="$PROJECT_DIR$/src/main/java/kek/study/question/RadioQuestionFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/kek/study/MainScreenController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/details/StudyDetails.sqf" />
+        <option value="$PROJECT_DIR$/src/test/java/DatabaseTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEvent.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Tester.java" />
       </list>
     </option>
   </component>
@@ -346,6 +292,21 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="Tester$MockApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Tester$MockApp" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="study" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="Tester.testCreateQuestion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="study" />
@@ -367,35 +328,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="DatabaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Tester.testRadioNoDefaultAnswer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="study" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="DatabaseTest.testConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="study" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
-      <option name="METHOD_NAME" value="testConnection" />
+      <option name="MAIN_CLASS_NAME" value="Tester" />
+      <option name="METHOD_NAME" value="testRadioNoDefaultAnswer" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -409,14 +349,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="DatabaseTest.testDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Tester.testAnswerIsAnswer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="study" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
-      <option name="METHOD_NAME" value="testDatabase" />
+      <option name="MAIN_CLASS_NAME" value="Tester" />
+      <option name="METHOD_NAME" value="testAnswerIsAnswer" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -834,18 +774,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.Tester.testCreateQuestion" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DatabaseTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DatabaseTest.testConnection" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.DatabaseTest.testDatabase" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Tester$MockApp" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.Tester.testCreateQuestion" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.Tester.testRadioNoDefaultAnswer" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.Tester.testAnswerIsAnswer" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DatabaseTest.testDatabase" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DatabaseTest.testConnection" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DatabaseTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.Tester.testCreateQuestion" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.Tester.testAnswerIsAnswer" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.Tester.testRadioNoDefaultAnswer" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.Tester.testCreateQuestion" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Tester$MockApp" />
       </list>
     </recent_temporary>
   </component>
@@ -895,26 +835,13 @@
       <workItem from="1490753803351" duration="985000" />
       <workItem from="1490784212119" duration="1780000" />
       <workItem from="1490790078896" duration="7961000" />
-      <workItem from="1490805317522" duration="8000" />
+      <workItem from="1490805317522" duration="202000" />
+      <workItem from="1490819929817" duration="2855000" />
+      <workItem from="1490825259612" duration="155000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DatabaseTest_testDatabase - 2017.03.29 at 16h 49m 35s.xml">
-      <configuration name="DatabaseTest.testDatabase" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DatabaseTest_testDatabase - 2017.03.29 at 17h 18m 54s.xml">
-      <configuration name="DatabaseTest.testDatabase" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DatabaseTest_testDatabase - 2017.03.29 at 17h 20m 32s.xml">
-      <configuration name="DatabaseTest.testDatabase" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DatabaseTest_testDatabase - 2017.03.29 at 17h 21m 29s.xml">
-      <configuration name="DatabaseTest.testDatabase" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DatabaseTest_testDatabase - 2017.03.29 at 17h 21m 54s.xml">
-      <configuration name="DatabaseTest.testDatabase" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DatabaseTest_testDatabase - 2017.03.29 at 17h 22m 50s.xml">
       <configuration name="DatabaseTest.testDatabase" configurationId="JUnit" />
     </history-entry>
@@ -930,9 +857,24 @@
     <history-entry file="DatabaseTest_testDatabase - 2017.03.29 at 17h 42m 28s.xml">
       <configuration name="DatabaseTest.testDatabase" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Tester_testAnswerIsAnswer - 2017.03.29 at 23h 49m 57s.xml">
+      <configuration name="Tester.testAnswerIsAnswer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tester_testCreateQuestion - 2017.03.29 at 23h 42m 03s.xml">
+      <configuration name="Tester.testCreateQuestion" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tester_testRadioNoDefaultAnswer - 2017.03.29 at 23h 42m 34s.xml">
+      <configuration name="Tester.testRadioNoDefaultAnswer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tester_testRadioNoDefaultAnswer - 2017.03.29 at 23h 45m 30s.xml">
+      <configuration name="Tester.testRadioNoDefaultAnswer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tester_testRadioNoDefaultAnswer - 2017.03.29 at 23h 47m 06s.xml">
+      <configuration name="Tester.testRadioNoDefaultAnswer" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73292000" />
+    <option name="totallyTimeSpent" value="76496000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -944,19 +886,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16251831" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23817034" sideWeight="0.48901904" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23817034" sideWeight="0.48901904" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -973,7 +916,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -989,7 +931,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -998,13 +940,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/study.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1036,13 +971,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/StudyMainScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/Reader.java">
@@ -1143,32 +1078,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/MusicRadioQuestionFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/MusicRadioQuestion.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/RadioQuestion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/SimplyRadioQuestion.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/details/ImageStudyDetails.sqf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="44" lean-forward="true" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/details/MusicStudyDetails.sqf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Tester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1242,11 +1156,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/details/StudyDetails.sqf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1254,77 +1167,87 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/details/StudyDetails.sqf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/QuestionImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
+        <state relative-caret-position="104">
           <caret line="63" column="40" lean-forward="false" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/RadioQuestionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="44" column="16" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/MainScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3366">
+        <state relative-caret-position="546">
           <caret line="217" column="38" lean-forward="false" selection-start-line="217" selection-start-column="38" selection-end-line="217" selection-end-column="38" />
-          <folding>
-            <marker date="1490804025670" expanded="true" signature="7189:7216" ph="SELECT * FRO... ANSWERS_TABLE" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="69" column="62" lean-forward="false" selection-start-line="69" selection-start-column="62" selection-end-line="69" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1490803641423" expanded="true" signature="1733:1843" ph="CREATE TABLE... ANSWERS_TABLE" />
-            <marker date="1490803641423" expanded="true" signature="1993:2066" ph="INSERT INTO ANSWER_TABLE... " />
-            <marker date="1490803641423" expanded="true" signature="2993:3020" ph="SELECT * FRO... ANSWERS_TABLE" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DatabaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="108" column="92" lean-forward="true" selection-start-line="108" selection-start-column="92" selection-end-line="108" selection-end-column="92" />
+        <state relative-caret-position="425">
+          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/RadioQuestionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="119" column="23" lean-forward="false" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/details/ImageStudyDetails.sqf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/RadioQuestion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="70" column="47" lean-forward="false" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/question/event/QuestionAnsweredEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1490801314271" expanded="true" signature="1381:1511" ph="CREATE TABLE... TESTTABLE" />
-            <marker date="1490801314271" expanded="true" signature="1780:1879" ph="INSERT INTO TESTTABLE... " />
-            <marker date="1490801314271" expanded="true" signature="2440:2521" ph="UPDATE TESTT... " />
-            <marker date="1490801314271" expanded="true" signature="2767:2790" ph="SELECT * FRO... TESTTABLE" />
-            <marker date="1490801314271" expanded="true" signature="3215:3278" ph="SELECT * FRO... TESTTABLE" />
-            <marker date="1490801314271" expanded="true" signature="4653:4666" ph="CREATE TABLE... NEWTABLE" />
-            <marker date="1490801314271" expanded="true" signature="4653:4774" ph="CREATE TABLE... NEWTABLEID" />
-            <marker date="1490801314271" expanded="true" signature="4653:4775" ph="CREATE TABLE... NEWTABLE" />
-            <marker date="1490801314271" expanded="true" signature="5069:5081" ph="INSERT INTO TESTTABLE... " />
-            <marker date="1490801314271" expanded="true" signature="5069:5138" ph="INSERT INTO TESTTABLE... " />
-            <marker date="1490801314271" expanded="true" signature="5069:5173" ph="INSERT INTO TESTTABLE... " />
-            <marker date="1490801314271" expanded="true" signature="6733:6755" ph="SELECT * FRO... NEWTABLE" />
-            <marker date="1490801314271" expanded="true" signature="6733:6756" ph="SELECT * FRO... NEWTABLE2" />
+            <marker date="1490823564980" expanded="true" signature="1733:1843" ph="CREATE TABLE... ANSWERS_TABLE" />
+            <marker date="1490823564980" expanded="true" signature="1993:2066" ph="INSERT INTO ANSWER_TABLE... " />
+            <marker date="1490823564980" expanded="true" signature="2993:3020" ph="SELECT * FRO... ANSWERS_TABLE" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kek/study/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

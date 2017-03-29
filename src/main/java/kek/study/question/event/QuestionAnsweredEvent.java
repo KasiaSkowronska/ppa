@@ -91,7 +91,9 @@ public class QuestionAnsweredEvent {
 //						e.printStackTrace();
 					}
 				} finally {
-					connection.rollback();
+//					connection.rollback(); // we use 'rollback' when we don't want to save changes.
+				// that's why it was in tests.
+					connection.commit();
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
