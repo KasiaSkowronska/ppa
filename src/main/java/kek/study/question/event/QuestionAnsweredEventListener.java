@@ -6,6 +6,6 @@ import java.io.UnsupportedEncodingException;
 
 public interface QuestionAnsweredEventListener {
 
-	public void handleEvent(QuestionAnsweredEvent event) throws FileNotFoundException;
+	public void handleEvent(QuestionAnsweredEvent event) throws FileNotFoundException, ClassNotFoundException;
 
 }

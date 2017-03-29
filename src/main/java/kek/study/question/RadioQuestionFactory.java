@@ -41,6 +41,8 @@ public class RadioQuestionFactory extends QuestionFactory {
                 question.fireEvent();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
         });
         questionBox.getChildren().add(finishButton);

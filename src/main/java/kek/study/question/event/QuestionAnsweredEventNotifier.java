@@ -8,5 +8,5 @@ public interface QuestionAnsweredEventNotifier {
 	public void addQuestionAnsweredListener(QuestionAnsweredEventListener listener);
 	public void removeQuestionAnsweredListener(QuestionAnsweredEventListener listener);
 	
-	public void fireEvent() throws FileNotFoundException;
+	public void fireEvent() throws FileNotFoundException, ClassNotFoundException;
 }

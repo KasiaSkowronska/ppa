@@ -1,5 +1,4 @@
-StartQuestion type=radio ID=5
-music=plik
+StartQuestion type=radio ID=1 music=ancora_qui.mp3
 Który kotek ma najdłuższy ogon?
 Skwarka
 A

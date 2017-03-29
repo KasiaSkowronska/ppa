@@ -58,7 +58,7 @@ public abstract class QuestionImp implements IQuestion {
 		listeners.remove(listener);
 	}
 	
-	public void fireEvent() throws FileNotFoundException {
+	public void fireEvent() throws FileNotFoundException, ClassNotFoundException {
 		QuestionAnsweredEvent event = new QuestionAnsweredEvent(this, getAnswer());
 		for (QuestionAnsweredEventListener listener : listeners) {
 			listener.handleEvent(event);
