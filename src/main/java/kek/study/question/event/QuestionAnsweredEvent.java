@@ -71,33 +71,16 @@ public class QuestionAnsweredEvent {
 						System.out.println("Created entry id: " + keys.getInt(1));
 						// it informs that entry with that id was created
 					}
-					// now presenting data is here, after each event save something to database, but should
-					// be moved to corresponding button action event.
-					// IT WORKS HERE, BUT: this code should works in presentData() in MainController.
-//					try {
-//						final Statement retrieveAnswers = connection.createStatement();
-//						try (ResultSet everything = retrieveAnswers.executeQuery("SELECT * FROM ANSWERS_TABLE")) {
-//							while (everything.next()) {
-//								int dbId = everything.getInt("ID");
-//								int questionId = everything.getInt("QUESTIONID");
-//								String answerCode = everything.getString("ANSWERCODE");
-//								System.out.println("Database entry number: " + dbId);
-//								System.out.println("Question id:  " + questionId);
-//								System.out.println("Answer: " + answerCode);
-//								System.out.println("-------------------------");
-//							}
-//						}
-//					} catch (SQLException e) {
-//						e.printStackTrace();
-					}
 				} finally {
 //					connection.rollback(); // we use 'rollback' when we don't want to save changes.
-				// that's why it was in tests.
 					connection.commit();
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
+	}
 
 }

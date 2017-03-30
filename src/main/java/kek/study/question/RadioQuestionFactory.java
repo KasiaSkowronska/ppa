@@ -36,7 +36,7 @@ public class RadioQuestionFactory extends QuestionFactory {
 
         Button finishButton = new Button("Submit");
         finishButton.setOnAction((event) -> {
-        	System.out.println(question.listeners.size());
+//        	System.out.println(question.listeners.size());
             try {
                 question.fireEvent();
             } catch (FileNotFoundException e) {

@@ -20,7 +20,7 @@ public abstract class QuestionFactory implements IQuestionFactory {
 
     protected void addExtras(QuestionImp question, String extrasType, String extrasFile) {
 
-    	System.out.println(extrasType);
+//    	System.out.println(extrasType);
         if (extrasType.equals("music")){
         	String path = System.getProperty("user.dir") + File.separator + "target" + File.separator + "classes" +
                     File.separator + "music" + File.separator;
@@ -44,7 +44,7 @@ public abstract class QuestionFactory implements IQuestionFactory {
             loader = new ResourcesLoader("image");
 
             File f = loader.loadFile(extrasFile);
-            System.out.println(f.toURI().toString());
+//            System.out.println(f.toURI().toString());
             Image image = new Image(f.toURI().toString());
             imv.setImage(image);
 

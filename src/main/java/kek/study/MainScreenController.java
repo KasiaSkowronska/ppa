@@ -9,7 +9,9 @@ import java.util.Map;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import kek.study.question.*;
 import kek.study.question.event.QuestionAnsweredEvent;
 import kek.study.question.event.QuestionAnsweredEventListener;
@@ -49,6 +51,7 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 	public MainScreenController() throws FileNotFoundException {
 		out = new PrintWriter("answers.answ");
 		this.whichQuestion = -1; // we count from 0.
+//		mainStudy.getChildren().add(createDatabaseBox());
 	}
 
 
@@ -80,10 +83,28 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 		}
 	}
 
+	private VBox createDatabaseBox(){
+		VBox dbBox = new VBox();
+		dbBox.getChildren().add(new Label("Thank you!"));
+		Button displayDataButton = new Button("Display data from the whole study");
+		displayDataButton.setOnAction((event) -> {
+			try {
+				displayData();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+		});
+		dbBox.getChildren().add(displayDataButton);
+		Button clearDatabaseButton = new Button("Clear database");
+		clearDatabaseButton.setOnAction((event) -> clearDatabase());
+		dbBox.getChildren().add(clearDatabaseButton);
+		return dbBox;
+	}
+
 	private void endStudy() throws ClassNotFoundException {
 		mainStudy.getChildren().clear();
-		mainStudy.getChildren().add(new Label("Thank you!"));
-		presentData();
+		VBox dbBox = createDatabaseBox();
+		mainStudy.getChildren().add(dbBox);
 	}
 
 
@@ -115,7 +136,7 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 					if (which == i) {
 						readingQuestions = true;
 						String[] elements = currentLine.split(" ");
-						System.out.println(currentLine);
+//						System.out.println(currentLine);
 						for (String elt : elements) {
 							String[] parameter = elt.split("=");
 							if (parameter.length > 1) {
@@ -210,14 +231,14 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 		}
 	}
 
-	public void presentData() throws ClassNotFoundException {
-		// a function to present data (should be connected to correct button)
-		System.out.println("Summarized data from the whole study: ");
+	public void displayData() throws ClassNotFoundException {
+		// a function to display data (should be connected to correct button)
+		System.out.println("\nSummarized data from the whole study:\n");
 		Class.forName("org.hsqldb.jdbc.JDBCDriver"); // set correct database
 		try (Connection connection = DriverManager.getConnection(  // make connection to it
 				"jdbc:hsqldb:file:newdb", "admin", "")) {
 			connection.setAutoCommit(true); // something to deal with transactions, dunno exactly what it is
-			// I've set to "true" and works. dunno why.
+			// I've set to "true" and works. I don't know why yet.
 			try {
 				final Statement retrieveAnswers = connection.createStatement();
 				try (ResultSet everything = retrieveAnswers.executeQuery("SELECT * FROM ANSWERS_TABLE")) {
@@ -237,6 +258,28 @@ public class MainScreenController implements QuestionAnsweredEventListener {
 				e.printStackTrace();
 			}
 		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void clearDatabase() {
+		try {
+			Class.forName("org.hsqldb.jdbc.JDBCDriver");
+			try (Connection connection = DriverManager.getConnection(
+					"jdbc:hsqldb:file:newdb",
+					"admin",
+					"")) {
+				connection.setAutoCommit(true);
+				// should by try?
+					final PreparedStatement deleteEverything;
+					deleteEverything = connection.prepareStatement("DELETE FROM ANSWERS_TABLE");
+					deleteEverything.execute();
+				// catch?
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	}

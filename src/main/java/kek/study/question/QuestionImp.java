@@ -32,7 +32,6 @@ public abstract class QuestionImp implements IQuestion {
 	@Override
 	public void init(){
 		if (mediaPlayer != null){
-			System.out.println("tak");
 	        mediaPlayer.setMute(false);
 	        mediaPlayer.setAutoPlay(true);
 	        MediaView mediaView = new MediaView(mediaPlayer);
